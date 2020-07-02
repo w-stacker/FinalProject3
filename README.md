@@ -64,3 +64,19 @@ Mobile
 
 
 Controller / touchscreen / keyboard / mouse / gamepad
+
+
+
+Comment section for each game
+
+
+
+message board 
+
+
+
+pin updates
+
+
+
+
