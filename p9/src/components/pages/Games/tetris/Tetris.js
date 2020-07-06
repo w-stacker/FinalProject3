@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
+import Tetris from 'react-tetris'
 
-const Tetris = require('react-tetris')
 
 class TetrisApp extends Component {
    render() {

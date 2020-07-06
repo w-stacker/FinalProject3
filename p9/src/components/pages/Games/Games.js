@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
-import { Link, Route, Switch } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 class Games extends Component {
     render() {
         return (
             <div className="gameLinks">
-                <Link to="/TetrisGame" style={linkStyle}>Tetris</Link>
-
+                <ul>
+                    <li>
+                        <Link to="/TetrisGame" style={linkStyle}>Tetris</Link>
+                    </li>    
+                    <li>
+                        <Link to="/Hangman" style={linkStyle}>Hangman</Link>
+                    </li>
+                </ul>   
             </div>
         )
     }
