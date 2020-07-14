@@ -1,6 +1,5 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-// import { Highlight, Loading } from "../components";
 
 import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 
