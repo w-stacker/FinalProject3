@@ -8,7 +8,7 @@ import About from '../src/components/pages/About/About'
 import TetrisGame from './components/pages/Games/tetris/TetrisGame'
 import Hangman from './components/pages/Games/hangman/Hangman'
 import LoginButton from './components/pages/Login/LoginButton'
-import { UserContext } from './UserContext';
+import { UserContext, UserContextProvider } from './UserContext';
 import Profile from '../src/components/Profiles/Profiles'
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
         <div className="container">
           <Header />
             <Switch>
-              <UserContext.Provider value="Hello from context">
+              <UserContext.Provider value="Hello " >
                 <Route path="/" exact component={Home} />
                 <Route path="/profile" exact component={Profile} />
                 <Route path="/Games" exact component={Games}/>

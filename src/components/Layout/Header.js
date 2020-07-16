@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { useAuth0 } from '@auth0/auth0-react'
 import LoginButton from '../pages/Login/LoginButton'
 import LogoutButton from '../pages/Login/LogoutButton'
-import Profile from '../Profiles/Profiles'
+
 
 
 const AuthNav = () => {
@@ -24,11 +24,7 @@ const AuthNav = () => {
     )
 }
 
-
-
 const Header = () => {
-
-
     return (
         <header style={headerStyle}>          
             <nav>

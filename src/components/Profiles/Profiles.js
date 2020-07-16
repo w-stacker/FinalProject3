@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-
 import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 
 const Profile = () => {
   const { user } = useAuth0();
-  const { name, picture, email } = user;
+  const { name, picture, email } = user
+  
+  useEffect(() => {
+
+  })
+
 
   return (
     <Container className="mb-5">
@@ -23,7 +27,9 @@ const Profile = () => {
         </Col>
       </Row>
       <Row>
-        <div>{JSON.stringify(user, null, 2)}</div>
+        <div>{JSON.stringify(user)}</div>
+        <div><b>{JSON.stringify(user.name)}</b></div>
+        <div><b>{JSON.stringify(user.family_name)}</b></div>
       </Row>
     </Container>
   );
