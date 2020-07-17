@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { useAuth0 } from '@auth0/auth0-react'
 import LoginButton from '../pages/Login/LoginButton'
 import LogoutButton from '../pages/Login/LogoutButton'
+import UserInfo from './UserInfo'
 
 
 
@@ -15,6 +16,7 @@ const AuthNav = () => {
             <div className="dropdown">
                 <button className="dropbtn">
                     <Link to='./profile' style={linkStyle}>Profile</Link>
+                    <UserInfo />
                     </button>
                 <div className="dropdown-content">
                     <LogoutButton />
@@ -32,6 +34,7 @@ const Header = () => {
                 <ul className='nav-links'>
                 <Link to="/" style={linkStyle}>Home</Link> | <Link to='/games' style={linkStyle}>Games</Link> | <Link to='/about' style={linkStyle}>About</Link> | <AuthNav />
                 </ul>
+                
             </nav>
         </header>
     )

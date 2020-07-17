@@ -8,8 +8,9 @@ import About from '../src/components/pages/About/About'
 import TetrisGame from './components/pages/Games/tetris/TetrisGame'
 import Hangman from './components/pages/Games/hangman/Hangman'
 import LoginButton from './components/pages/Login/LoginButton'
-import { UserContext, UserContextProvider } from './UserContext';
+import { UserContext } from './UserContext';
 import Profile from '../src/components/Profiles/Profiles'
+
 
 function App() {
   
