@@ -15,7 +15,7 @@ const AuthNav = () => {
         {isAuthenticated ? 
             <div className="dropdown">
                 <button className="dropbtn">
-                    <Link to='./profile' style={linkStyle}>Profile</Link>
+                    <Link to='/profile' style={linkStyle}>Profile</Link>
                     <UserInfo />
                     </button>
                 <div className="dropdown-content">

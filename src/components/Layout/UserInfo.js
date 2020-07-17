@@ -5,7 +5,6 @@ import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 
 const UserInfo = () => {
         const { user } = useAuth0();
-        const { name, picture, email } = user
         
         return (
             <div>

@@ -7,6 +7,7 @@ const LogoutButton = () => {
     return (
         <Link
             onClick={()=> logout()}
+            to="/"
             id="qsLogoutBtn"
             style={linkStyle}
             className="btn-margin">
