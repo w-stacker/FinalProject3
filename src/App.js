@@ -10,6 +10,7 @@ import Hangman from './components/pages/Games/hangman/Hangman'
 import LoginButton from './components/pages/Login/LoginButton'
 import { UserContext } from './UserContext';
 import Profile from '../src/components/Profiles/Profiles'
+import Minesweeper from './components/pages/Games/minesweeper/components/App/index';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
                 <Route path="/Games" exact component={Games}/>
                 <Route path="/About" exact component={About}/>
                 <Route path='/TetrisGame' exact component={TetrisGame} />
+                <Route path='/Minesweeper' exact component={Minesweeper} />
                 <Route path='/Hangman' exact component={Hangman} />
                 <Route path='/Login' exact component={LoginButton} />
               </UserContext.Provider>
