@@ -5,7 +5,7 @@ import Header from './components/Layout/Header'
 import Games from './components/pages/Games/Games'
 import Home from './components/pages/Home/Home'
 import About from '../src/components/pages/About/About'
-import TetrisGame from './components/pages/Games/tetris/TetrisGame'
+import TetrisGame from './components/pages/Games/tetris/TetrisApp'
 import Hangman from './components/pages/Games/hangman/Hangman'
 import Login from './components/pages/Login/Login'
 
