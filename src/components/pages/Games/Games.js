@@ -18,7 +18,7 @@ const Games = () => {
                         <Link to="/Hangman" style={linkStyle}>Hangman</Link>
                     </li>
                     <li>
-                        <Link to="/Snek" style={linkStyle}>Snake</Link>
+                        <Link to="/Snake" style={linkStyle}>Snake</Link>
                     </li>
                 </ul>   
             </div>

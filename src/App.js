@@ -3,14 +3,14 @@ import './App.css';
 import { Switch, Route } from 'react-router-dom'
 import Header from './components/Layout/Header'
 import Games from './components/pages/Games/Games'
-import Home from './components/pages/Home/Home'
-import About from '../src/components/pages/About/About'
-import TetrisGame from './components/pages/Games/tetris/TetrisGame'
-import Hangman from './components/pages/Games/hangman/Hangman'
-import Snek from './components/pages/Games/snek/index'
-import LoginButton from './components/pages/Login/LoginButton'
+import Home from './components/pages/Home/Home';
+import About from '../src/components/pages/About/About';
+import TetrisGame from './components/pages/Games/tetris/TetrisGame';
+import Hangman from './components/pages/Games/hangman/Hangman';
+import SnakeGame from './components/pages/Games/snek/SnakeGame';
+import LoginButton from './components/pages/Login/LoginButton';
 import { UserContext } from './UserContext';
-import Profile from '../src/components/Profiles/Profiles'
+import Profile from '../src/components/Profiles/Profiles';
 
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
                 <Route path="/About" exact component={About}/>
                 <Route path='/TetrisGame' exact component={TetrisGame} />
                 <Route path='/Hangman' exact component={Hangman} />
-                <Route path='/Snek' exact component={Snek} />
+                <Route path='/Snake' exact component={SnakeGame} />
                 <Route path='/Login' exact component={LoginButton} />
               </UserContext.Provider>
             </Switch>          

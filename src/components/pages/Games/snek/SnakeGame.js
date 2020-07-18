@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Snake from "./Snake";
 import Food from "./Food";
+import './index.css';
 
 const getRandomCoordinates = () => {
   let min = 1;
@@ -16,7 +17,8 @@ const initialState = {
   direction: "RIGHT",
   snakeBlocks: [[0, 0], [2, 0], [4, 0]]
 };
-class Snek extends Component {
+
+class SnakeGame extends Component {
   constructor(props) {
     super();
     this.state = initialState;
@@ -151,4 +153,4 @@ class Snek extends Component {
     );
   }
 }
-export default Snek;
+export default SnakeGame;
