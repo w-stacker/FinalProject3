@@ -13,6 +13,7 @@ const App = () => {
     const [isLive, setIsLive] = useState(false);
     const [hasWon, setHasWon] = useState(false);
     const [hasLost, setHasLost] = useState(false);
+    const [newScore, setNewScore] = useState(0);
 
     useEffect(() => {
         if (isLive && !hasWon && !hasLost) {
@@ -139,6 +140,7 @@ const App = () => {
         }
 
         if (cell.value > 0) {
+            setNewScore(newScore + 1);
             gameCells = setCellProp(gameCells, rowParam, colParam, "state", 1);
         }
 
@@ -190,6 +192,7 @@ const App = () => {
 
     const handleFaceClick = e => {
         e.preventDefault();
+        console.log(newScore);
         if (isLive) {
             setCells(generateCells());
             setIsLive(false);
@@ -198,6 +201,7 @@ const App = () => {
             setHasLost(false);
             setHasWon(false);
             setFace(":D");
+            setNewScore(0);
         }
     };
 
@@ -293,7 +297,7 @@ const App = () => {
     return (
         <div className="App">
             <div className="Header">
-                <NumberDisplay value={mineCounter} />
+                <NumberDisplay value={newScore} />
                 <div className="Face" onClick={handleFaceClick}>
                     <span role="img" aria-label="smiley">
                         {face}
