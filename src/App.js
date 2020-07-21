@@ -11,7 +11,7 @@ import SnakeGame from './components/pages/Games/Snake/SnakeGame'
 import LoginButton from './components/pages/Login/LoginButton'
 import { UserContext } from './UserContext';
 import Profile from '../src/components/Profiles/Profiles'
-import TicTacToe from './components/pages/Games/Tictactoe/TicTacToeGames';
+import { Game } from './components/pages/Games/Tictactoe/Game';
 
 
 function App() {
@@ -29,7 +29,7 @@ function App() {
                 <Route path='/TetrisGame' exact component={TetrisGame} />
                 <Route path='/Hangman' exact component={Hangman} />
                 <Route path='/Snake' exact component={SnakeGame} />
-                <Route path='/TicTacToe' exact component={TicTacToe} />
+                <Route path='/TicTacToe' exact component={Game} />
                 <Route path='/Login' exact component={LoginButton} />
               </UserContext.Provider>
             </Switch>          
