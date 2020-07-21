@@ -5,12 +5,13 @@ import Header from './components/Layout/Header'
 import Games from './components/pages/Games/Games'
 import Home from './components/pages/Home/Home'
 import About from '../src/components/pages/About/About'
-import TetrisGame from './components/pages/Games/tetris/TetrisGame'
+import TetrisGame from './components/pages/Games/tetris/TetrisApp'
 import Hangman from './components/pages/Games/hangman/Hangman'
 import SnakeGame from './components/pages/Games/Snake/SnakeGame'
 import LoginButton from './components/pages/Login/LoginButton'
 import { UserContext } from './UserContext';
-import Profile from '../src/components/Profiles/Profiles';
+import Profile from '../src/components/Profiles/Profiles'
+import Minesweeper from './components/pages/Games/minesweeper/components/App/index';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
                 <Route path="/Games" exact component={Games}/>
                 <Route path="/About" exact component={About}/>
                 <Route path='/TetrisGame' exact component={TetrisGame} />
+                <Route path='/Minesweeper' exact component={Minesweeper} />
                 <Route path='/Hangman' exact component={Hangman} />
                 <Route path='/Snake' exact component={SnakeGame} />
                 <Route path='/Login' exact component={LoginButton} />
