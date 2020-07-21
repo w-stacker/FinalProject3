@@ -3,12 +3,12 @@ import './App.css';
 import { Switch, Route } from 'react-router-dom'
 import Header from './components/Layout/Header'
 import Games from './components/pages/Games/Games'
-import Home from './components/pages/Home/Home';
-import About from '../src/components/pages/About/About';
-import TetrisGame from './components/pages/Games/tetris/TetrisGame';
-import Hangman from './components/pages/Games/hangman/Hangman';
-import SnakeGame from './components/pages/Games/snek/SnakeGame';
-import LoginButton from './components/pages/Login/LoginButton';
+import Home from './components/pages/Home/Home'
+import About from '../src/components/pages/About/About'
+import TetrisGame from './components/pages/Games/tetris/TetrisGame'
+import Hangman from './components/pages/Games/hangman/Hangman'
+import SnakeGame from './components/pages/Games/Snake/SnakeGame'
+import LoginButton from './components/pages/Login/LoginButton'
 import { UserContext } from './UserContext';
 import Profile from '../src/components/Profiles/Profiles';
 
