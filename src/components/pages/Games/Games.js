@@ -15,9 +15,6 @@ const Games = () => {
                         <Link to="/TetrisGame" style={linkStyle}>Tetris</Link>
                     </li>    
                     <li>
-                        <Link to="/Hangman" style={linkStyle}>Hangman</Link>
-                    </li>
-                    <li>
                         <Link to="/Snake" style={linkStyle}>Snake</Link>
                     </li>
                     <li>
