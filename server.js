@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 // const User = require('./server/models/User')
 const app = express();
 const PORT = process.env.PORT || 3001;
-const routes = require('./server/routes');
+const routes = require('./server/routes/index');
 const bodyParser = require('body-parser')
 
 // Define middleware here
@@ -21,8 +21,9 @@ if (process.env.NODE_ENV === "production") {
 
 
 // Connect to the Mongo DB
+
 mongoose.connect("mongodb+srv://root:toor@cluster0.it7v6.mongodb.net/playgames?retryWrites=true&w=majority", { useNewUrlParser: true })
-.then(() => console.log('Connected to MongoDBAtlas'))
+.then(() => console.log('Connected to MongoDB Atlas on ' + PORT))
 .catch(err => console.log(err));
 
 
