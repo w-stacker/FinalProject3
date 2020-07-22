@@ -15,13 +15,13 @@ const Games = () => {
                         <Link to="/TetrisGame" style={linkStyle}>Tetris</Link>
                     </li>    
                     <li>
-                        <Link to="/Hangman" style={linkStyle}>Hangman</Link>
-                    </li>
-                    <li>
                         <Link to="/Snake" style={linkStyle}>Snake</Link>
                     </li>
                     <li>
-                        <Link to="/Minesweeper" style={linkStyle}>Minesweeper</Link>
+                        <Link to="/TicTacToe" style={linkStyle}>Tic Tac Toe</Link>
+                    </li>
+                    <li>
+                      <Link to="/Minesweeper" style={linkStyle}>Minesweeper</Link>
                     </li>
                 </ul>   
             </div>
