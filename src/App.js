@@ -6,7 +6,6 @@ import Games from './components/pages/Games/Games'
 import Home from './components/pages/Home/Home'
 import About from '../src/components/pages/About/About'
 import TetrisGame from './components/pages/Games/tetris/TetrisApp'
-import Hangman from './components/pages/Games/hangman/Hangman'
 import SnakeGame from './components/pages/Games/Snake/SnakeGame'
 import Game from './components/pages/Games/Tictactoe/Game'
 import LoginButton from './components/pages/Login/LoginButton'
@@ -29,7 +28,6 @@ function App() {
                 <Route path="/About" exact component={About}/>
                 <Route path='/TetrisGame' exact component={TetrisGame} />
                 <Route path='/Minesweeper' exact component={Minesweeper} />
-                <Route path='/Hangman' exact component={Hangman} />
                 <Route path='/Snake' exact component={SnakeGame} />
                 <Route path='/TicTacToe' exact component={Game} />
                 <Route path='/Login' exact component={LoginButton} />
