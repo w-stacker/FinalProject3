@@ -11,12 +11,13 @@ import SnakeGame from './components/pages/Games/Snake/SnakeGame'
 import LoginButton from './components/pages/Login/LoginButton'
 import { UserContext } from './UserContext';
 import Profile from '../src/components/Profiles/Profiles'
-import Minesweeper from './components/pages/Games/minesweeper/components/App/index';
+import Minesweeper from './components/pages/Games/minesweeper/minesweeper';
 
 
 function App() {
   
   return (
+    <div className="MineBody">
       <div className="App">
         <div className="container">
           <Header />
@@ -35,6 +36,7 @@ function App() {
             </Switch>          
         </div>
       </div>
+    </div>
   );
 }
 
