@@ -1,11 +1,11 @@
-const db = require("../models");
+const db = require("../models/");
 
 module.exports = {
   findAll: function(req, res) {
     db.User
-      .find(req.query)
-      .sort({ date: -1 })
-      .then(dbModel => res.json(dbModel))
+      .find({})
+      .then (dbModel => {
+        res.json(dbModel)})
       .catch(err => res.status(422).json(err));
   },
   findById: function(req, res) {
@@ -14,11 +14,12 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  create: function(req, res) {
+  createUser: function({body}, res) {
+    console.log(body)
     db.User
-      .create(req.body)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+      .create(body).then(()=> res.json({message: "success", body}))
+      // .then(dbModel => res.json(dbModel))
+      // .catch(err => res.status(422).json(err));
   },
   update: function(req, res) {
     db.User

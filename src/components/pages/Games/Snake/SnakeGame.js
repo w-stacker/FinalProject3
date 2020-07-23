@@ -135,12 +135,17 @@ class SnakeGame extends Component {
     }
   }
 
+  
+
   onGameOver() {
     alert(`Game Over. Snake length is ${this.state.snakeBlocks.length}`);
     this.setState(initialState);
+    // post score and user's name to mongo DB if logged in. 
+    console.log(this.state.score);
   }
 
   render() {
+    
     return (
       <div className="container">
         <div className="score"> {this.state.score} </div>
@@ -149,7 +154,7 @@ class SnakeGame extends Component {
           <Food block={this.state.food} />
         </div>
       </div>
-
+      
     );
   }
 }
