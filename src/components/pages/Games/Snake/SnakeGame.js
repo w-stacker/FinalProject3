@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Snake from "./Snake";
 import Food from "./Food";
 import axios from 'axios'
+// import UserInfo from '../../../Layout/UserInfo'
 import './index.css';
 
 
@@ -138,10 +139,8 @@ class SnakeGame extends Component {
     }
   }
 
-  
-
   onGameOver() {
-    const score = this.state.score
+    const score = 
 
     this.setState(initialState);
     
@@ -149,7 +148,7 @@ class SnakeGame extends Component {
     // posts score and user's name to mongo DB if logged in. 
     axios.post('http://localhost:3001/api/snake', {
         userName: "placeholdername",
-        score : 1241 
+        score : this.state.score
       })
     console.log(score);
     // axios.get('http://localhost:3001/api/snake')

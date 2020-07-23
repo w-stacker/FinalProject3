@@ -8,6 +8,7 @@ import UserInfo from './UserInfo'
 
 
 const AuthNav = () => {
+        
     const { isAuthenticated } = useAuth0();
 
     return (
