@@ -3,7 +3,7 @@ import "./NumberDisplay.css";
 
 const NumberDisplay = ({ value }) => {
     return (
-        <div className="NumberDisplay">
+        <div className="MineNumberDisplay">
             {value < 0
             ? `-${Math.abs(value)
                 .toString()

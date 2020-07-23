@@ -29,7 +29,7 @@ const Tetris = () => {
 
   const keyUp = ({ keyCode }) => {
     if (!gameOver) {
-      if (keyCode === 40) {
+      if (keyCode === 87) {
         setDropTime(1000 / (level + 1));
       }
     }
@@ -56,6 +56,8 @@ const Tetris = () => {
     } else {
       if (player.pos.y < 1) {
         console.log('GAME OVER!!!');
+        //Output final game score before reset
+        console.log(score);
         setGameOver(true);
         setDropTime(null);
       }
@@ -64,7 +66,7 @@ const Tetris = () => {
   };
 
   const dropPlayer = () => {
-    setDropTime(null);
+    // setDropTime(null);
     drop();
   };
 

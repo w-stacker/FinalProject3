@@ -1,6 +1,11 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import App from "./components/App";
 import "./minesweeper.css";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+const Minesweeper = () => {
+    return (
+        <App className="MineThing" />
+    );
+};
+
+export default Minesweeper;

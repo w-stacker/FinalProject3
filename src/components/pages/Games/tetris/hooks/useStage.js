@@ -30,6 +30,7 @@ export const useStage = (player, resetPlayer) => {
               value,
               `${player.collided ? 'merged' : 'clear'}`,
             ];
+            console.log(newStage)
           }
         });
       });
