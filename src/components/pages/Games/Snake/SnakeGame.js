@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Snake from "./Snake";
 import Food from "./Food";
 import axios from 'axios'
-// import UserInfo from '../../../Layout/UserInfo'
 import './index.css';
 
 
