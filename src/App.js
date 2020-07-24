@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import axios from 'axios';
 import './App.css';
 import { Switch, Route } from 'react-router-dom'
 import Header from './components/Layout/Header'
@@ -16,11 +17,17 @@ import Minesweeper from './components/pages/Games/minesweeper/components/App/ind
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({})
+  // const [userName, setUserName] = setState('')
+
 
   const updateUser = (user) => {
     setLoggedInUser(user)
   }
 
+  // useEffect(() => {
+  //   console.log("test", user)
+  //   axios.get('http://localhost:3001/api/user', user)
+  // }, [user] )
 
 
   return (

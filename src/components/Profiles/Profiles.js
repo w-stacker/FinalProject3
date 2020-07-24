@@ -12,10 +12,7 @@ const Profile = () => {
 
   // //useEffect, takes user info to back end. 
 
-  useEffect(() => {
-    console.log("test", user)
-    axios.post('http://localhost:3001/api/user', user)
-  }, [user] )
+
 
   return (
     <Container className="mb-5">

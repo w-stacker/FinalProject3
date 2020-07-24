@@ -1,7 +1,11 @@
 import { createContext } from 'react'
 
-export const UserContext = createContext();
+export const UserContext = createContext({
+    user: ""
+});
 
 
 
-// export default UserContextProvider;
+//capture id place it here 
+
+export default UserContext;
