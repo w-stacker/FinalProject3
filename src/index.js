@@ -9,11 +9,11 @@ import Auth0ProviderWithHistory from '../src/components/pages/Login/Auth0-Provid
             
 ReactDOM.render(
   <Router> 
-  <Auth0ProviderWithHistory>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </Auth0ProviderWithHistory>
+    <Auth0ProviderWithHistory>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </Auth0ProviderWithHistory>
   </Router>,
   document.getElementById('root')
 );

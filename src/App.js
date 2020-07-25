@@ -14,10 +14,13 @@ import LoginButton from './components/pages/Login/LoginButton'
 import Profile from '../src/components/Profiles/Profiles'
 import Minesweeper from './components/pages/Games/minesweeper/minesweeper';
 import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
+import Jeopardy from "./components/pages/Games/Jeopardy/jep.js";
+import roidsStart from "./components/pages/Games/Reacteroids/src/Reacteroids.js";
 
 const UserContext = React.createContext();
 
 function App() {
+
   const [loggedInUser, setLoggedInUser] = useState({})
   const [userName, setUserName] = useState('')
   const { user } = useAuth0();
@@ -28,20 +31,20 @@ function App() {
         UserId.push(res.data._id)
     })
 
+
   const updateUser = (user) => {
-    setLoggedInUser(user)
-  }
+    setLoggedInUser(user);
+  };
 
   // useEffect(() => {
   //   console.log("test", user)
   //   axios.get('http://localhost:3001/api/user', user)
   // }, [user] )
 
-
   return (
-    <div className="MineBody">
-      <div className="App">
-        <div className="container">
+    <div className='MineBody'>
+      <div className='App'>
+        <div className='container'>
           <Header />
             <UserContext.Provider value={UserId}>
               <Switch>
@@ -53,6 +56,8 @@ function App() {
                 <Route path='/Minesweeper' exact render={()=><Minesweeper minesweeperUser={loggedInUser} />} />
                 <Route path='/Snake' exact render={()=><SnakeGame snakeUser={loggedInUser} />} />
                 <Route path='/TicTacToe' exact component={Game} />
+                <Route path='Jeopardy' exact component={Jeopardy} />
+                <Route path='/Asteroids' exact component={Asteroids} />
                 <Route path='/Login' exact component={LoginButton} />
             </Switch>
           </UserContext.Provider>
