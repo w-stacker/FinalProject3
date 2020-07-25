@@ -14,7 +14,6 @@ import { UserContext } from "./UserContext";
 import Profile from "../src/components/Profiles/Profiles";
 import Minesweeper from "./components/pages/Games/minesweeper/minesweeper";
 import Jeopardy from "./components/pages/Games/Jeopardy/jep.js";
-import roidsStart from "./components/pages/Games/Reacteroids/src/Reacteroids.js";
 
 
 function App() {
@@ -45,7 +44,7 @@ function App() {
               />
               <Route path='/Games' exact component={Games} />
               <Route path='Jeopardy' exact component={Jeopardy} />
-              <Route path='/Asteroids' exact component={Asteroids} />
+              <Route path='/Asteroids' exact component={roidsStart} />
               <Route path='/About' exact component={About} />
               <Route
                 path='/TetrisGame'
