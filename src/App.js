@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import axios from 'axios';
 import './App.css';
 import { Switch, Route } from 'react-router-dom'
 import Header from './components/Layout/Header'
@@ -15,21 +16,34 @@ import Minesweeper from './components/pages/Games/minesweeper/minesweeper';
 
 
 function App() {
-  
+  const [loggedInUser, setLoggedInUser] = useState({})
+  // const [userName, setUserName] = setState('')
+
+
+  const updateUser = (user) => {
+    setLoggedInUser(user)
+  }
+
+  // useEffect(() => {
+  //   console.log("test", user)
+  //   axios.get('http://localhost:3001/api/user', user)
+  // }, [user] )
+
+
   return (
     <div className="MineBody">
       <div className="App">
         <div className="container">
           <Header />
             <Switch>
-              <UserContext.Provider value="Hello " >
+              <UserContext.Provider value="Bloop" >
                 <Route path="/" exact component={Home} />
-                <Route path="/profile" exact component={Profile} />
+                <Route path="/profile" exact render={()=><Profile updatedUser={updateUser}/>}  />
                 <Route path="/Games" exact component={Games}/>
                 <Route path="/About" exact component={About}/>
-                <Route path='/TetrisGame' exact component={TetrisGame} />
-                <Route path='/Minesweeper' exact component={Minesweeper} />
-                <Route path='/Snake' exact component={SnakeGame} />
+                <Route path='/TetrisGame' exact render={()=><TetrisGame tetrisUser={loggedInUser} />} />
+                <Route path='/Minesweeper' exact render={()=><Minesweeper minesweeperUser={loggedInUser} />} />
+                <Route path='/Snake' exact render={()=><SnakeGame snakeUser={loggedInUser} />} />
                 <Route path='/TicTacToe' exact component={Game} />
                 <Route path='/Login' exact component={LoginButton} />
               </UserContext.Provider>

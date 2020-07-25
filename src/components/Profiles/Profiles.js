@@ -1,11 +1,18 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
+import axios from "axios";
 // import axios from 'axios'
+import { useEffect } from 'react'
 
 const Profile = () => {
   const { user } = useAuth0();
+  console.log("userAuth0", user)
   const { name, picture, email } = user
+
+  // //useEffect, takes user info to back end. 
+
+
 
   return (
     <Container className="mb-5">

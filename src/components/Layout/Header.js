@@ -8,6 +8,7 @@ import UserInfo from './UserInfo'
 
 
 const AuthNav = () => {
+        
     const { isAuthenticated } = useAuth0();
 
     return (
@@ -34,7 +35,6 @@ const Header = () => {
                 <ul className='nav-links'>
                 <Link to="/" style={linkStyle}>Home</Link> | <Link to='/games' style={linkStyle}>Games</Link> | <Link to='/about' style={linkStyle}>About</Link> | <AuthNav />
                 </ul>
-                
             </nav>
         </header>
     )
