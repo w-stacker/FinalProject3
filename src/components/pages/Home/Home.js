@@ -1,10 +1,9 @@
 import React, {  useContext } from 'react'
-// import { UserContext } from '../../../UserContext'
+import { UserContext } from '../../../UserContext'
 
 
 export function Home () {
-    const msg  = "Hello World"
-    // useContext(UserContext);
+    const msg  = useContext(UserContext);
 
     return <h2>{msg}</h2>
 }

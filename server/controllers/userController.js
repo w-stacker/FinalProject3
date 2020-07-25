@@ -15,7 +15,7 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   createUser: function({body}, res) {
-
+    
     db.User
       .create(body).then(dbModel => res.json(dbModel))
       // .then(dbModel => res.json(dbModel))

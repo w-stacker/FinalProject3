@@ -1,11 +1,4 @@
-import React from 'react';
-
-const UserContxt = React.createContext({user: {}});
-
-export {
-    UserContext
-};
-
+import { createContext } from 'react';
 
 // export default class UserContext extends React.Component {
 //     // state = {
@@ -14,15 +7,11 @@ export {
 // }
 
 
+export const UserContext = createContext({
+    user: ""
+});
 
 
 
-// import { createContext } from 'react'
+//capture id place it here 
 
-// export const UserContext = createContext({
-//     user: ""
-// });
-
-// //capture id place it here 
-
-// export default UserContext;
