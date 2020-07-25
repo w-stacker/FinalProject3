@@ -1,13 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom' 
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import Auth0ProviderWithHistory from '../src/components/pages/Login/Auth0-Provider-with-history';
 
+            
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Router> 
+    <Auth0ProviderWithHistory>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </Auth0ProviderWithHistory>
+  </Router>,
   document.getElementById('root')
 );
 
