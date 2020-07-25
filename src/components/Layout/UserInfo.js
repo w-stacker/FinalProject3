@@ -10,9 +10,8 @@ const UserInfo = () => {
 
         axios.post('http://localhost:3001/api/user', user)
             .then( res => {
-                console.log(res)}
+                console.log(res.data._id)}
             )
-        
         return (
             <div>
                 <h1><b>{JSON.stringify(user.name)}</b></h1>
