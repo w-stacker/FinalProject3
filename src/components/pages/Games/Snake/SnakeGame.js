@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import Snake from "./Snake";
 import Food from "./Food";
+import axios from 'axios';
 import './index.css';
+import { useAuth0 } from "@auth0/auth0-react";
+
+// let { user } = this.props.Auth0()
 
 const getRandomCoordinates = () => {
   let min = 1;
@@ -19,6 +23,7 @@ const initialState = {
 };
 
 class SnakeGame extends Component {
+  
   constructor(props) {
     super();
     this.state = initialState;
@@ -135,13 +140,28 @@ class SnakeGame extends Component {
     }
   }
 
-  
-
   onGameOver() {
-    alert(`Game Over. Snake length is ${this.state.snakeBlocks.length}`);
+   
+    
+
     this.setState(initialState);
-    // post score and user's name to mongo DB if logged in. 
-    console.log(this.state.score);
+    
+    alert(`Game Over. Snake length is ${this.state.snakeBlocks.length}`);
+    // posts score and user's name to mongo DB if logged in. 
+    
+   
+
+    axios.post('http://localhost:3001/api/snake', {
+      data: 
+        {userName: "user.name",
+        score : this.state.score}
+      })
+ ;
+    // axios.get('http://localhost:3001/api/snake')
+    //   .then(data => {
+    //     console.log(data)
+    //   })
+
   }
 
   render() {
