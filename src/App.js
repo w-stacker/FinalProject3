@@ -14,8 +14,7 @@ import LoginButton from './components/pages/Login/LoginButton'
 import Profile from '../src/components/Profiles/Profiles'
 import Minesweeper from './components/pages/Games/minesweeper/minesweeper';
 import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
-import Jeopardy from "./components/pages/Games/Jeopardy/jep.js";
-import roidsStart from "./components/pages/Games/Reacteroids/Reacteroids.js";
+
 
 const UserContext = React.createContext();
 
@@ -56,8 +55,6 @@ function App() {
                 <Route path='/Minesweeper' exact render={()=><Minesweeper minesweeperUser={loggedInUser} />} />
                 <Route path='/Snake' exact render={()=><SnakeGame snakeUser={loggedInUser} />} />
                 <Route path='/TicTacToe' exact component={Game} />
-                <Route path='Jeopardy' exact component={Jeopardy} />
-                <Route path='/Asteroids' exact component={roidsStart} />
                 <Route path='/Login' exact component={LoginButton} />
             </Switch>
           </UserContext.Provider>
