@@ -15,7 +15,7 @@ import Profile from '../src/components/Profiles/Profiles'
 import Minesweeper from './components/pages/Games/minesweeper/minesweeper';
 import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 import Jeopardy from "./components/pages/Games/Jeopardy/jep.js";
-import roidsStart from "./components/pages/Games/Reacteroids/Reacteroids.js";
+
 
 const UserContext = React.createContext();
 
@@ -46,21 +46,37 @@ function App() {
       <div className='App'>
         <div className='container'>
           <Header />
-            <UserContext.Provider value={UserId}>
-              <Switch>
-                <Route path="/" exact component={Home} />
-                <Route path="/profile" exact render={()=><Profile updatedUser={updateUser}/>}  />
-                <Route path="/Games" exact component={Games}/>
-                <Route path="/About" exact component={About}/>
-                <Route path='/TetrisGame' exact render={()=><TetrisGame tetrisUser={loggedInUser} />} />
-                <Route path='/Minesweeper' exact render={()=><Minesweeper minesweeperUser={loggedInUser} />} />
-                <Route path='/Snake' exact render={()=><SnakeGame snakeUser={loggedInUser} />} />
-                <Route path='/TicTacToe' exact component={Game} />
-                <Route path='Jeopardy' exact component={Jeopardy} />
-                <Route path='/Asteroids' exact component={Asteroids} />
-                <Route path='/Login' exact component={LoginButton} />
-            </Switch>
-          </UserContext.Provider>
+
+          <Switch>
+            <UserContext.Provider value='Bloop'>
+              <Route path='/' exact component={Home} />
+              <Route
+                path='/profile'
+                exact
+                render={() => <Profile updatedUser={updateUser} />}
+              />
+              <Route path='/Games' exact component={Games} />
+              <Route path='Jeopardy' exact component={Jeopardy} />
+              <Route path='/About' exact component={About} />
+              <Route
+                path='/TetrisGame'
+                exact
+                render={() => <TetrisGame tetrisUser={loggedInUser} />}
+              />
+              <Route
+                path='/Minesweeper'
+                exact
+                render={() => <Minesweeper minesweeperUser={loggedInUser} />}
+              />
+              <Route
+                path='/Snake'
+                exact
+                render={() => <SnakeGame snakeUser={loggedInUser} />}
+              />
+              <Route path='/TicTacToe' exact component={Game} />
+              <Route path='/Login' exact component={LoginButton} />
+            </UserContext.Provider>
+          </Switch>
         </div>
       </div>
     </div>
