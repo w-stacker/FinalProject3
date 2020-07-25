@@ -1,7 +1,10 @@
-import { createContext } from 'react'
+import { createContext } from 'react';
 
-
-
+// export default class UserContext extends React.Component {
+//     // state = {
+//     //     loggedInUser: []
+//     // }
+// }
 
 
 export const UserContext = createContext({
@@ -12,4 +15,3 @@ export const UserContext = createContext({
 
 //capture id place it here 
 
-export default UserContext;
