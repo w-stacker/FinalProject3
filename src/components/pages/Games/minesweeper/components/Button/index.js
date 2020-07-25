@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./Button.css";
 
 const Button = ({ onClick, onContext, row, col, state, value, red }) => {
@@ -20,7 +20,7 @@ const Button = ({ onClick, onContext, row, col, state, value, red }) => {
     };
 
     return (
-        <div className={`Button value-${value} ${state === 1 ? "visable" : ""} ${red ? "red" : ""}`} onClick={onClick(row, col)} onContextMenu={onContext(row, col)}>
+        <div className={`MineButton value-${value} ${state === 1 ? "visable" : ""} ${red ? "red" : ""}`} onClick={onClick(row, col)} onContextMenu={onContext(row, col)}>
             {displayContent()}
         </div>
     );

@@ -4,6 +4,7 @@ import NumberDisplay from "../NumberDisplay/index";
 import Button from "../Button/index";
 import generateCells from "../utils/generateCells";
 import setCellProp from "../utils/setCellProp";
+import "../../minesweeper.css";
 
 const App = () => {
     const [cells, setCells] = useState(generateCells());
@@ -295,17 +296,18 @@ const App = () => {
     };
 
     return (
-        <div className="App">
-            <div className="Header">
+        <div className="MineApp">
+            <div className="MineHeader">
                 <NumberDisplay value={newScore} />
-                <div className="Face" onClick={handleFaceClick}>
-                    <span role="img" aria-label="smiley">
+                <div className="MineFace" onClick={handleFaceClick}>
+                    <span role="Mineimg" aria-label="smiley">
                         {face}
                     </span>
                 </div>
+                {/* <div className="MineFace" onClick={openAllBombs}></div> */}
                 <NumberDisplay value={time} />
             </div>
-            <div className="Body">{renderRows()}</div>
+            <div className="MineMine">{renderRows()}</div>
         </div>
     );
 };

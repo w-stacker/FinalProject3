@@ -6,13 +6,13 @@ import Header from './components/Layout/Header'
 import Games from './components/pages/Games/Games'
 import Home from './components/pages/Home/Home'
 import About from '../src/components/pages/About/About'
-import TetrisGame from './components/pages/Games/tetris/TetrisApp'
+import TetrisGame from './components/pages/Games/tetris/TetrisStart'
 import SnakeGame from './components/pages/Games/Snake/SnakeGame'
 import Game from './components/pages/Games/Tictactoe/Game'
 import LoginButton from './components/pages/Login/LoginButton'
 import { UserContext } from './UserContext';
 import Profile from '../src/components/Profiles/Profiles'
-import Minesweeper from './components/pages/Games/minesweeper/components/App/index';
+import Minesweeper from './components/pages/Games/minesweeper/minesweeper';
 
 
 function App() {
@@ -31,6 +31,7 @@ function App() {
 
 
   return (
+    <div className="MineBody">
       <div className="App">
         <div className="container">
           <Header />
@@ -49,6 +50,7 @@ function App() {
             </Switch>          
         </div>
       </div>
+    </div>
   );
 }
 
