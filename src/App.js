@@ -15,7 +15,7 @@ import Profile from '../src/components/Profiles/Profiles'
 import Minesweeper from './components/pages/Games/minesweeper/minesweeper';
 import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 import Jeopardy from "./components/pages/Games/Jeopardy/jep.js";
-import roidsStart from "./components/pages/Games/Reacteroids/src/Reacteroids.js";
+import roidsStart from "./components/pages/Games/Reacteroids/Reacteroids.js";
 
 const UserContext = React.createContext();
 
