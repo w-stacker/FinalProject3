@@ -57,7 +57,7 @@ function App() {
                 <Route path='/Snake' exact render={()=><SnakeGame snakeUser={loggedInUser} />} />
                 <Route path='/TicTacToe' exact component={Game} />
                 <Route path='Jeopardy' exact component={Jeopardy} />
-                <Route path='/Asteroids' exact component={Asteroids} />
+                <Route path='/Asteroids' exact component={roidsStart} />
                 <Route path='/Login' exact component={LoginButton} />
             </Switch>
           </UserContext.Provider>
