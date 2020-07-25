@@ -1,3 +1,5 @@
+import React from "react";
+
 const headerHeight = "75";
 
 const styles = {
@@ -66,7 +68,7 @@ class Column extends React.Component {
   }
 }
 
-class App extends React.Component {
+class Jeopardy extends React.Component {
   render() {
     //headlines is an array like ['headline one', 'headline 2', etc...]
     let headlines = Object.keys(this.props.data);
@@ -163,4 +165,5 @@ let actualQuestions = {
 };
 let useActualQuestions = true; // set to true to use my questions instead of the stubs
 let data = useActualQuestions ? actualQuestions : stubQuestions;
-ReactDOM.render(<App data={data} />, document.getElementById("main"));
+
+export default Jeopardy;
