@@ -1,9 +1,6 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
-import { UserContext } from "../../../UserContext";
-
-const Games = () => {
-  let msg = useContext(UserContext);
+import React from 'react';
+import { Link } from 'react-router-dom'
+// import { UserContext } from './../../../UserContext';
 
   return (
     <div className='container'>
