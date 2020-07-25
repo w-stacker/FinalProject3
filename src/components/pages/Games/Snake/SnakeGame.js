@@ -7,6 +7,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 // let { user } = this.props.Auth0()
 
+
 const getRandomCoordinates = () => {
   let min = 1;
   let max = 98;
@@ -23,7 +24,7 @@ const initialState = {
 };
 
 class SnakeGame extends Component {
-  
+
   constructor(props) {
     super();
     this.state = initialState;

@@ -8,6 +8,8 @@ import { useGameStatus } from '../hooks/useGameStatus';
 import Stage from './Stage';
 import Display from './Display';
 import StartButton from './StartButton';
+import axios from 'axios';
+import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 
 const Tetris = () => {
   
@@ -20,6 +22,16 @@ const Tetris = () => {
   );
 
   console.log('re-render');
+  
+  const { user } = useAuth0();
+  const UserId = [];
+  axios.post('http://localhost:3001/api/user', user)
+            .then( res => {
+                console.log(res.data._id);
+                UserId.push(res.data._id)
+            })
+            
+  
 
   const movePlayer = dir => {
     if (!checkCollision(player, stage, { x: dir, y: 0 })) {

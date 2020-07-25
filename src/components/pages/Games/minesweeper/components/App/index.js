@@ -5,6 +5,8 @@ import Button from "../Button/index";
 import generateCells from "../utils/generateCells";
 import setCellProp from "../utils/setCellProp";
 import "../../minesweeper.css";
+import axios from 'axios';
+import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 
 const App = () => {
     const [cells, setCells] = useState(generateCells());
@@ -15,6 +17,14 @@ const App = () => {
     const [hasWon, setHasWon] = useState(false);
     const [hasLost, setHasLost] = useState(false);
     const [newScore, setNewScore] = useState(0);
+
+    const { user } = useAuth0();
+    const UserId = [];
+    axios.post('http://localhost:3001/api/user', user)
+            .then( res => {
+                console.log(res.data._id);
+                UserId.push(res.data._id)
+            })
 
     useEffect(() => {
         if (isLive && !hasWon && !hasLost) {
@@ -47,6 +57,7 @@ const App = () => {
     useEffect(() => {
         if (hasLost) {
             setFace(":O");
+            // can post final score here
         }
     }, [hasLost]);
 
