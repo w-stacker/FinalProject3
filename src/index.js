@@ -4,9 +4,9 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import Auth0ProviderWithHistory from '../src/components/pages/Login/Auth0-Provider-with-history'
+import Auth0ProviderWithHistory from '../src/components/pages/Login/Auth0-Provider-with-history';
 
-
+            
 ReactDOM.render(
   <Router> 
   <Auth0ProviderWithHistory>

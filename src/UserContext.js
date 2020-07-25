@@ -1,15 +1,22 @@
-import { createContext } from 'react'
+import React from 'react';
+
+const UserContxt = React.createContext({user: {}});
+
+export {
+    UserContext
+};
 
 
 
 
 
-export const UserContext = createContext({
-    user: ""
-});
 
+// import { createContext } from 'react'
 
+// export const UserContext = createContext({
+//     user: ""
+// });
 
-//capture id place it here 
+// //capture id place it here 
 
-export default UserContext;
+// export default UserContext;
