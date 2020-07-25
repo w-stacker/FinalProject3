@@ -14,7 +14,7 @@ import { UserContext } from "./UserContext";
 import Profile from "../src/components/Profiles/Profiles";
 import Minesweeper from "./components/pages/Games/minesweeper/minesweeper";
 import Jeopardy from "./components/pages/Games/Jeopardy/jep.js";
-import roidsStart from "./components/pages/Games/Reacteroids/src/Reacteroids.js";
+import roidsStart from "./components/pages/Games/Reacteroids/Reacteroids.js";
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
