@@ -1,10 +1,13 @@
-import React from 'react';
+import React, {  useContext } from 'react';
 import { Link } from 'react-router-dom'
 // import { UserContext } from './../../../UserContext';
 
+const Games = () => {
+  // let msg = useContext(UserContext)
+
   return (
     <div className='container'>
-      <div className='usercontext'>{msg}</div>
+      {/* <div className='usercontext'>{msg}</div> */}
       <div className='gameLinks'>
         <ul>
           <li>
