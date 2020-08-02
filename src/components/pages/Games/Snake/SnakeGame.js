@@ -186,3 +186,4 @@ class SnakeGame extends Component {
 
 
 export default SnakeGame;
+
