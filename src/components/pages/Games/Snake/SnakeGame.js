@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+import React, { Component, useContext } from "react";
+import UserContext  from '../../../../../src/Utils/UserContext'
 import Snake from "./Snake";
 import Food from "./Food";
 import axios from 'axios';
@@ -6,7 +7,6 @@ import './index.css';
 import { useAuth0 } from "@auth0/auth0-react";
 
 // let { user } = this.props.Auth0()
-
 
 const getRandomCoordinates = () => {
   let min = 1;
@@ -20,10 +20,15 @@ const initialState = {
   food: getRandomCoordinates(),
   speed: 200,
   direction: "RIGHT",
-  snakeBlocks: [[0, 0], [2, 0], [4, 0]]
+  snakeBlocks: [[0, 0], [2, 0], [4, 0]],
+  name: ""
 };
 
+
+
 class SnakeGame extends Component {
+
+  static contextType = UserContext;
 
   constructor(props) {
     super();
@@ -37,7 +42,15 @@ class SnakeGame extends Component {
   componentDidMount() {
     this.speed();
     document.onkeydown = this.onKeyDown;
+    const user = this.context
+    this.setState({name: user.user[0].name})
+
+    // console.log(user.user[0]._id)
+    // console.log(user.user[0].name)
+    // console.log(user.user)
+    // console.log(user)
   }
+  
   componentDidUpdate() {
     this.checkIfOutOfBorders();
     this.checkIfCollapsed();
@@ -142,27 +155,18 @@ class SnakeGame extends Component {
   }
 
   onGameOver() {
-   
-    
+    // console.log(user.user[0]._id)
+    // console.log(this.state.name)
 
     this.setState(initialState);
     
     alert(`Game Over. Snake length is ${this.state.snakeBlocks.length}`);
     // posts score and user's name to mongo DB if logged in. 
     
-   
-
-    axios.post('http://localhost:3001/api/snake', {
-      data: 
-        {userName: "user.name",
+    axios.post('http://localhost:3001/api/snake', 
+        {userName: this.state.name,
         score : this.state.score}
-      })
- ;
-    // axios.get('http://localhost:3001/api/snake')
-    //   .then(data => {
-    //     console.log(data)
-    //   })
-
+      );
   }
 
   render() {
@@ -179,5 +183,7 @@ class SnakeGame extends Component {
     );
   }
 }
+
+
 export default SnakeGame;
 

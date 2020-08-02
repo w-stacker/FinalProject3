@@ -1,12 +1,17 @@
-import React, {  useContext } from 'react'
+import React, {  useContext } from 'react';
+import TetrisScoreboard from './Components/TetrisScoreboard'
 // import { UserContext } from '../../../UserContext'
 
 
 export function Home () {
-    const msg  = "Hello World"
     // useContext(UserContext);
 
-    return <h2>{msg}</h2>
+    return (
+    <b>
+        High scores!
+        <TetrisScoreboard/> 
+    </b>
+    )
 }
 
 export default Home;
