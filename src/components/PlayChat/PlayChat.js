@@ -1,11 +1,12 @@
 import React from 'react';
-import './App.css';
+// import './App.css';
 
 import 'antd/dist/antd.css';
 
-import Dashboard from './Container/Dashboard/Dashboard';
-import Store from "./Container/Dashboard/Store"
+import Dashboard from './src/Container/Dashboard/Dashboard';
+import Store from "./src/Container/Dashboard/Store"
 
+//formally app.js
 function PlayChat() {
   return (
     <div className="App">

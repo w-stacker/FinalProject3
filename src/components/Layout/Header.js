@@ -33,7 +33,7 @@ const Header = () => {
             <nav>
                 <h1>!PLAY</h1>
                 <ul className='nav-links'>
-                <Link to="/" style={linkStyle}>Home</Link> | <Link to='/games' style={linkStyle}>Games</Link> | <Link to='/about' style={linkStyle}>About</Link> | <AuthNav />
+                <Link to="/" style={linkStyle}>Home</Link> | <Link to='/games' style={linkStyle}>Games</Link> | <Link to='/playchat' style={linkStyle}>Play Chat!</Link> | <Link to='/about' style={linkStyle}>About</Link> | <AuthNav />
                 </ul>
             </nav>
         </header>

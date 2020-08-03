@@ -3,7 +3,7 @@ import Snake from "./Snake";
 import Food from "./Food";
 import axios from 'axios';
 import './index.css';
-import { useAuth0 } from "@auth0/auth0-react";
+// import { useAuth0 } from "@auth0/auth0-react";
 import UserContext from "../../../../UserContext"
 // let { user } = this.props.Auth0()
 

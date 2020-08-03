@@ -9,6 +9,7 @@ import About from '../src/components/pages/About/About'
 import TetrisGame from './components/pages/Games/tetris/TetrisStart'
 import SnakeGame from './components/pages/Games/Snake/SnakeGame'
 import Game from './components/pages/Games/Tictactoe/Game'
+import Playchat from './components/PlayChat/PlayChat'
 import LoginButton from './components/pages/Login/LoginButton'
 // import { UserContext } from './UserContext';
 import Profile from '../src/components/Profiles/Profiles'
@@ -56,6 +57,7 @@ function App() {
                 render={() => <Profile updatedUser={updateUser} />}
               />
               <Route path='/Games' exact component={Games} />
+              <Route path='/Playchat' exact component={Playchat} />
               <Route path='Jeopardy' exact component={Jeopardy} />
               <Route path='/About' exact component={About} />
               <Route
