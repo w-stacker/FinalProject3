@@ -1,5 +1,5 @@
 import React, { Component, useContext } from "react";
-import UserContext  from '../../../../../src/Utils/UserContext'
+import UserContext  from '../../../../Utils/UserContext'
 import Snake from "./Snake";
 import Food from "./Food";
 import axios from 'axios';
