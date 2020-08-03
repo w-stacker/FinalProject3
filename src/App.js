@@ -11,36 +11,23 @@ import SnakeGame from './components/pages/Games/Snake/SnakeGame'
 import Game from './components/pages/Games/Tictactoe/Game'
 import Playchat from './components/PlayChat/PlayChat'
 import LoginButton from './components/pages/Login/LoginButton'
-// import { UserContext } from './UserContext';
+import UserContext from './UserContext'
 import Profile from '../src/components/Profiles/Profiles'
 import Minesweeper from './components/pages/Games/minesweeper/minesweeper';
 import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
-import Jeopardy from "./components/pages/Games/Jeopardy/jep.js";
-
-
-const UserContext = React.createContext();
 
 function App() {
 
-  const [loggedInUser, setLoggedInUser] = useState({})
-  const [userName, setUserName] = useState('')
-  const { user } = useAuth0();
-  const UserId = [];
-  axios.post('http://localhost:3001/api/user', user)
-    .then( res => {
-        console.log(res.data._id);
-        UserId.push(res.data._id)
-    })
+  const [user, setUser] = useState('')
 
-
-  const updateUser = (user) => {
-    setLoggedInUser(user);
-  };
-
-  // useEffect(() => {
-  //   console.log("test", user)
-  //   axios.get('http://localhost:3001/api/user', user)
-  // }, [user] )
+  useEffect(() => {
+    axios.get('http://localhost:3001/api/user', user)
+    .then(res => {
+        setUser(res.data)
+        console.log(res.data)
+      }
+    )
+  }, [] );
 
   return (
     <div className='MineBody'>
@@ -49,34 +36,18 @@ function App() {
           <Header />
 
           <Switch>
-            <UserContext.Provider value='Bloop'>
-              <Route path='/' exact component={Home} />
-              <Route
-                path='/profile'
-                exact
-                render={() => <Profile updatedUser={updateUser} />}
-              />
-              <Route path='/Games' exact component={Games} />
-              <Route path='/Playchat' exact component={Playchat} />
-              <Route path='Jeopardy' exact component={Jeopardy} />
-              <Route path='/About' exact component={About} />
-              <Route
-                path='/TetrisGame'
-                exact
-                render={() => <TetrisGame tetrisUser={loggedInUser} />}
-              />
-              <Route
-                path='/Minesweeper'
-                exact
-                render={() => <Minesweeper minesweeperUser={loggedInUser} />}
-              />
-              <Route
-                path='/Snake'
-                exact
-                render={() => <SnakeGame snakeUser={loggedInUser} />}
-              />
-              <Route path='/TicTacToe' exact component={Game} />
-              <Route path='/Login' exact component={LoginButton} />
+            <UserContext.Provider value={{user: user}}>
+            <Route path="/" exact component={Home} />
+                <Route path="/profile" exact   />
+                <Route path="/Games" exact component={Games}/>
+                <Route path="/About" exact component={About}/>
+                <Route path="/Playchat" exact component={Playchat}/>
+                <Route path="/Profile" exact component={Profile}/>
+                <Route path='/TetrisGame' exact  component={TetrisGame} />
+                <Route path='/Minesweeper' exact component={Minesweeper}/>
+                <Route path='/Snake' exact component={SnakeGame}/>
+                <Route path='/TicTacToe' exact component={Game} />
+                <Route path='/Login' exact component={LoginButton} />
             </UserContext.Provider>
           </Switch>
         </div>

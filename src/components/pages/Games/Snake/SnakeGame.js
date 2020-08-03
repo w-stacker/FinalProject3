@@ -24,6 +24,8 @@ const initialState = {
   name: ""
 };
 
+
+
 class SnakeGame extends Component {
 
   static contextType = UserContext;
@@ -40,10 +42,15 @@ class SnakeGame extends Component {
   componentDidMount() {
     this.speed();
     document.onkeydown = this.onKeyDown;
-    const user = this.context;
-    this.setState({name: user.user[0].name});
+    const user = this.context
+    this.setState({name: user.user[0].name})
 
+    // console.log(user.user[0]._id)
+    // console.log(user.user[0].name)
+    // console.log(user.user)
+    console.log(user)
   }
+  
   componentDidUpdate() {
     this.checkIfOutOfBorders();
     this.checkIfCollapsed();
@@ -148,27 +155,18 @@ class SnakeGame extends Component {
   }
 
   onGameOver() {
-   
-    
+    // console.log(user.user[0]._id)
+    // console.log(this.state.name)
 
     this.setState(initialState);
     
     alert(`Game Over. Snake length is ${this.state.snakeBlocks.length}`);
     // posts score and user's name to mongo DB if logged in. 
     
-   
-
-    axios.post('http://localhost:3001/api/snake', {
-      data: 
+    axios.post('http://localhost:3001/api/snake', 
         {userName: this.state.name,
         score : this.state.score}
-      });
-
-    // axios.get('http://localhost:3001/api/snake')
-    //   .then(data => {
-    //     console.log(data)
-    //   })
-
+      );
   }
 
   render() {
@@ -183,7 +181,9 @@ class SnakeGame extends Component {
       </div>
       
     );
-  };
+  }
 }
+
+
 export default SnakeGame;
 
