@@ -39,11 +39,11 @@ function App() {
             <UserContext.Provider value={{user: user}}>
               <Switch>
                 <Route path="/" exact component={Home} />
-                <Route path="/profile" exact   />
+                <Route path="/profile" exact component={Profile}/>
                 <Route path="/Games" exact component={Games}/>
                 <Route path="/About" exact component={About}/>
-                <Route path='/TetrisGame' exact  />
-                <Route path='/Minesweeper' exact  />
+                <Route path='/TetrisGame' exact component={TetrisGame} />
+                <Route path='/Minesweeper' exact component={Minesweeper}  />
                 <Route path='/Snake' exact component={SnakeGame}/>
                 <Route path='/TicTacToe' exact component={Game} />
                 <Route path='/Login' exact component={LoginButton} />
