@@ -20,6 +20,10 @@ function App() {
 
   const [user, setUser] = useState('')
 
+  const newLogin = useAuth0()
+
+  console.log(newLogin)
+
   useEffect(() => {
     axios.get('http://localhost:3001/api/user', user)
     .then(res => {
