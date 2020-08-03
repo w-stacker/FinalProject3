@@ -4,7 +4,7 @@ import Food from "./Food";
 import axios from 'axios';
 import './index.css';
 import { useAuth0 } from "@auth0/auth0-react";
-
+import UserContext from "../../../../UserContext"
 // let { user } = this.props.Auth0()
 
 
@@ -20,10 +20,13 @@ const initialState = {
   food: getRandomCoordinates(),
   speed: 200,
   direction: "RIGHT",
-  snakeBlocks: [[0, 0], [2, 0], [4, 0]]
+  snakeBlocks: [[0, 0], [2, 0], [4, 0]],
+  name: ""
 };
 
 class SnakeGame extends Component {
+
+  static contextType = UserContext;
 
   constructor(props) {
     super();
@@ -37,6 +40,9 @@ class SnakeGame extends Component {
   componentDidMount() {
     this.speed();
     document.onkeydown = this.onKeyDown;
+    const user = this.context;
+    this.setState({name: user.user[0].name});
+
   }
   componentDidUpdate() {
     this.checkIfOutOfBorders();
@@ -154,10 +160,10 @@ class SnakeGame extends Component {
 
     axios.post('http://localhost:3001/api/snake', {
       data: 
-        {userName: "user.name",
+        {userName: this.state.name,
         score : this.state.score}
-      })
- ;
+      });
+
     // axios.get('http://localhost:3001/api/snake')
     //   .then(data => {
     //     console.log(data)
@@ -177,7 +183,7 @@ class SnakeGame extends Component {
       </div>
       
     );
-  }
+  };
 }
 export default SnakeGame;
 
