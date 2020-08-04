@@ -15,23 +15,24 @@ import UserContext from './UserContext'
 import Profile from '../src/components/Profiles/Profiles'
 import Minesweeper from './components/pages/Games/minesweeper/minesweeper';
 import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
+import  UserInfo from './components/Layout/UserInfo'
 
 function App() {
 
+
+
+  console.log(UserInfo)
+
   const [user, setUser] = useState('')
-
-  const newLogin = useAuth0()
-
-  console.log(newLogin)
 
   useEffect(() => {
     axios.get('http://localhost:3001/api/user', user)
-    .then(res => {
-        setUser(res.data)
-        console.log(res.data)
-      }
-    )
-  }, [] );
+      .then(res => {
+          setUser(res.data)
+          console.log(res.data)
+        }
+      )
+  }, []);
 
   return (
     <div className='MineBody'>
