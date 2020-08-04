@@ -18,21 +18,30 @@ import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 import  UserInfo from './components/Layout/UserInfo'
 
 function App() {
+  const [userID, setUserID] = useState()
+  const [usersName, setUsersName] = useState()
+  const { user } = useAuth0();
 
+        useEffect((user)=> {
+            axios.post('http://localhost:3001/api/user', user)
+                .then( res => {
+                    setUserID(res.data._id)
+                }
+            )
+        }, []
+    )
+    console.log(userID)
 
+  // const [user, setUser] = useState('')
 
-  console.log(UserInfo)
-
-  const [user, setUser] = useState('')
-
-  useEffect(() => {
-    axios.get('http://localhost:3001/api/user', user)
-      .then(res => {
-          setUser(res.data)
-          console.log(res.data)
-        }
-      )
-  }, []);
+  // useEffect(() => {
+  //   axios.get('http://localhost:3001/api/user', user)
+  //     .then(res => {
+  //         setUser(res.data)
+  //         console.log(res.data)
+  //       }
+  //     )
+  // }, []);
 
   return (
     <div className='MineBody'>
@@ -41,7 +50,10 @@ function App() {
           <Header />
 
           <Switch>
-            <UserContext.Provider value={{user: user}}>
+            <UserContext.Provider value={{
+              userId: userID,
+              // userName: usersName
+              }}>
             <Route path="/" exact component={Home} />
                 <Route path="/profile" exact   />
                 <Route path="/Games" exact component={Games}/>

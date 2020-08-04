@@ -5,25 +5,20 @@ import axios from 'axios';
 
 
 const UserInfo = () => {
-    const [userID, setUserID] = useState()
+    // const [userID, setUserID] = useState()
 
     const { user } = useAuth0();
-    console.log("User info: "+ Object.keys(user))
-        useEffect(()=> {
-            axios.post('http://localhost:3001/api/user', user)
-                .then( res => {
-                    setUserID(res.data._id)
-                    console.log(res.data._id)
-                }
-            )
-        }, []
-    )
-//     axios.post('http://localhost:3001/api/user', user)
-//         .then( res => {
-//             // setUserID(res.data._id)
-//             console.log(res.data._id)
-//         } [userID]
-// )
+    //     useEffect(()=> {
+    //         axios.post('http://localhost:3001/api/user', user)
+    //             .then( res => {
+    //                 setUserID(res.data._id)
+    //             }
+    //         )
+    //     }, []
+    // )
+
+    // console.log(userID)
+
     return (
         <div>
             <h1><b>{JSON.stringify(user.name)}</b></h1>
@@ -32,5 +27,8 @@ const UserInfo = () => {
     )
     
 }
+
+
+
 
 export default withAuthenticationRequired(UserInfo)

@@ -42,13 +42,14 @@ class SnakeGame extends Component {
   componentDidMount() {
     this.speed();
     document.onkeydown = this.onKeyDown;
-    const user = this.context
-    this.setState({name: user.user[0].name})
+    const {usersName, userID} = this.context
+   
+    this.setState({name: usersName})
 
     // console.log(user.user[0]._id)
     // console.log(user.user[0].name)
     // console.log(user.user)
-    console.log(user)
+    console.log(userID)
   }
   
   componentDidUpdate() {
@@ -156,7 +157,7 @@ class SnakeGame extends Component {
 
   onGameOver() {
     // console.log(user.user[0]._id)
-    // console.log(this.state.name)
+    console.log(this.state.name)
 
     this.setState(initialState);
     
