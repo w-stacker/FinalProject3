@@ -6,7 +6,6 @@ class TetrisGame extends Component {
         return (
             <div>
                 <TetrisApp />
-                
             </div>
         )
     }

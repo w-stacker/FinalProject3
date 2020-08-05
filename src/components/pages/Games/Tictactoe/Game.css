@@ -155,7 +155,7 @@
      }
     
      .game-info {
-    
+      font-size: 20px;
       margin-left: 20px;
     
      }
@@ -166,7 +166,7 @@
     
      }
     
-    body {
+    /* body {
       background-image: url("./assets/tic\ tac\ back.png");
       background-size: 100%;
-    }
+    } */
