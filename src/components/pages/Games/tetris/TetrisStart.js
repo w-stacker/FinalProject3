@@ -4,7 +4,7 @@ import TetrisApp from './TetrisApp';
 
 const TetrisStart = () => {
     return (
-        <TetrisApp />
+        <TetrisApp className="TetrisBody" />
     );
 };
 

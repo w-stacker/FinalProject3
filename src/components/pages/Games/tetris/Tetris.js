@@ -9,7 +9,6 @@ class TetrisApp extends Component {
         <h1>Tetris</h1>
         <Tetris>
           {({ HeldPiece, Gameboard, PieceQueue, points, linesCleared }) => {
-            // Render it however you'd like
             return (
               <div>
                 <HeldPiece />

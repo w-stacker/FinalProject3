@@ -1,5 +1,5 @@
 import React, { Component, useContext } from "react";
-import UserContext  from '../../../../../src/Utils/UserContext'
+import UserContext  from '../../../../Utils/UserContext'
 import Snake from "./Snake";
 import Food from "./Food";
 import axios from 'axios';
@@ -43,7 +43,7 @@ class SnakeGame extends Component {
     this.speed();
     document.onkeydown = this.onKeyDown;
     const user = this.context
-    this.setState({name: user.user[0].name})
+    // this.setState({name: user.user[0].name})ddsasd
 
     // console.log(user.user[0]._id)
     // console.log(user.user[0].name)
@@ -186,4 +186,3 @@ class SnakeGame extends Component {
 
 
 export default SnakeGame;
-

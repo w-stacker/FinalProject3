@@ -30,9 +30,9 @@ const Profile = () => {
         </Col>
       </Row>
       <Row>
-        <div>{JSON.stringify(user)}</div>
+        {/* <div>{JSON.stringify(user)}</div> */}
         <div><b>{JSON.stringify(user.name)}</b></div>
-        <div><b>{JSON.stringify(user.family_name)}</b></div>
+        {/* <div><b>{JSON.stringify(user.family_name)}</b></div> */}
       </Row>
     </Container>
   );
