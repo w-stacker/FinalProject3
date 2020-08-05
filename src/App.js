@@ -36,19 +36,19 @@ function App() {
       <div className='App'>
         <div className='container'>
           <Header />
-            <UserContext.Provider value={{user: user}}>
-              <Switch>
-                <Route path="/" exact component={Home} />
-                <Route path="/profile" exact component={Profile}/>
-                <Route path="/Games" exact component={Games}/>
-                <Route path="/About" exact component={About}/>
-                <Route path='/TetrisGame' exact component={TetrisGame} />
-                <Route path='/Minesweeper' exact component={Minesweeper}  />
-                <Route path='/Snake' exact component={SnakeGame}/>
-                <Route path='/TicTacToe' exact component={Game} />
-                <Route path='/Login' exact component={LoginButton} />
-              </Switch>
-            </UserContext.Provider>
+          <UserContext.Provider value={{user: user}}>
+            <Switch>
+              <Route path="/" exact component={Home} />
+              <Route path="/profile" exact component={Profile} />
+              <Route path="/Games" exact component={Games} />
+              <Route path="/About" exact component={About} />
+              <Route path='/TetrisGame' exact component={TetrisGame} />
+              <Route path='/Minesweeper' exact component={Minesweeper} />
+              <Route path='/Snake' exact component={SnakeGame} />
+              <Route path='/TicTacToe' exact component={Game} />
+              <Route path='/Login' exact component={LoginButton} />
+            </Switch>
+          </UserContext.Provider>
         </div>
       </div>
     </div>
